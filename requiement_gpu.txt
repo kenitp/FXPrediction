@@ -1,0 +1,6 @@
+pandas
+pandas-datareader
+tensorflow-gpu
+scikit-learn
+matplotlib
+yfinance

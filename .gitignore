@@ -1,0 +1,6 @@
+/__pycache__
+/.vscode
+/dist
+/log
+/out
+*.hdf5
