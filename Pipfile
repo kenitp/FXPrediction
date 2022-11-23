@@ -11,8 +11,10 @@ matplotlib = "*"
 yfinance = "*"
 tensorflow-gpu = "*"
 tensorflow = "*"
+types-requests = "*"
 
 [dev-packages]
+mypy = "*"
 
 [requires]
 python_version = "3.10"

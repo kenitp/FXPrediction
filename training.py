@@ -22,7 +22,7 @@ class Training:
     fig_loss, ax_loss = None, None
     fig_test, ax_test = None, None
     fig_loss_fname, fig_test_fname = None, None
-    dict_result = {}
+    dict_result: dict = {}
 
     def __init__(self, fx_predict, loss="mse", epochs=400, test=True, validation=False):
         self.loss = loss
@@ -154,6 +154,7 @@ class Training:
         df.loc[df["Close"] - df["Predicted"] >= diff, "UpDown(P)"] = "Down"
         df.loc[abs(df["Predicted"] - df["Close"]) < diff, "UpDown(P)"] = nan
         df = df.dropna(how="any")
+        # pylint: disable=E1136
         df.loc[df["Real"] - df["Close"] > 0, "UpDown(R)"] = "Up"
         df.loc[df["Real"] - df["Close"] <= 0, "UpDown(R)"] = "Down"
         df.loc[df["UpDown(P)"] == "Up", "Profit"] = df["Real"] - df["Close"]
